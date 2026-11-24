@@ -97,3 +97,4 @@ Trade request example:
 - Do not upload `node_modules`; it can be recreated with `npm install`.
 - This is a classroom simulation. It does not connect to a broker, execute real orders, or provide investment advice.
 - Before live deployment, add stronger validation, rate limiting, secure cookie/session handling, tests, audit logging and transactional safeguards.# stock-trading-and-portfolio
+# stock-trading-and-portfolio
