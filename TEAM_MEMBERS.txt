@@ -1,0 +1,7 @@
+ONLINE STOCK TRADING AND PORTFOLIO MANAGEMENT SYSTEM
+Software Engineering Final Project
+
+Team Members:
+1. Vedant Sonvane — EN24CS3011130
+2. Vedant Gour — EN24CS3011128
+3. Vedant Jain — EN24CS3011129

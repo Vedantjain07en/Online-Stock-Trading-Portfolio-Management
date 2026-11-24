@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TradeWise | Stock Portfolio Simulator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">T</span> TradeWise</a>
+    <nav><a href="#dashboard">Dashboard</a><a href="#markets">Markets</a><a href="#portfolio">Portfolio</a></nav>
+    <div class="nav-actions"><span id="welcome"></span><button id="logoutBtn" class="btn btn-outline hidden">Log out</button></div>
+  </header>
+
+  <main class="container">
+    <section id="authPanel" class="auth-layout">
+      <div class="hero">
+        <div class="eyebrow">LEARN • SIMULATE • TRACK</div>
+        <h1>Your stock market journey, <span>made simpler.</span></h1>
+        <p>Practice stock trading with virtual cash, understand your portfolio and track simulated performance — all in one dashboard.</p>
+        <div class="hero-points"><span>✓ Virtual ₹1,00,000 starting balance</span><span>✓ Portfolio and P&amp;L tracking</span><span>✓ No real-money transactions</span></div>
+      </div>
+      <div class="auth-card">
+        <div class="tabs"><button class="tab active" data-tab="login">Login</button><button class="tab" data-tab="register">Create account</button></div>
+        <form id="loginForm">
+          <h2>Welcome back</h2><label>Email</label><input name="email" type="email" placeholder="you@example.com" required />
+          <label>Password</label><input name="password" type="password" placeholder="Your password" required />
+          <button class="btn btn-primary full">Login to dashboard</button>
+        </form>
+        <form id="registerForm" class="hidden">
+          <h2>Create your account</h2><label>Full name</label><input name="name" placeholder="Your name" required />
+          <label>Email</label><input name="email" type="email" placeholder="you@example.com" required />
+          <label>Password (minimum 6 characters)</label><input name="password" type="password" minlength="6" required />
+          <button class="btn btn-primary full">Create account</button>
+        </form>
+        <p id="authMessage" class="message"></p>
+      </div>
+    </section>
+
+    <section id="appPanel" class="hidden">
+      <section id="dashboard" class="page-heading"><div><div class="eyebrow">OVERVIEW</div><h1>Market dashboard</h1><p>Monitor sample market prices and your simulated investments.</p></div><div class="market-status"><span class="pulse"></span> DEMO MARKET</div></section>
+      <div class="stats-grid">
+        <article class="stat-card"><span>Available virtual cash</span><strong id="cashValue">₹0</strong><small>Uninvested balance</small></article>
+        <article class="stat-card"><span>Portfolio value</span><strong id="portfolioValue">₹0</strong><small>Current holding value</small></article>
+        <article class="stat-card"><span>Total invested</span><strong id="investedValue">₹0</strong><small>Cost of current holdings</small></article>
+        <article class="stat-card"><span>Unrealised P&amp;L</span><strong id="pnlValue">₹0</strong><small>Based on sample prices</small></article>
+      </div>
+
+      <section id="markets" class="panel">
+        <div class="section-head"><div><h2>Market watch</h2><p>Sample prices for project demonstration</p></div><input id="searchStock" class="search" placeholder="Search company or symbol..." /></div>
+        <div class="table-wrap"><table><thead><tr><th>Company</th><th>Symbol</th><th>Sector</th><th>Price</th><th>Change</th><th>Action</th></tr></thead><tbody id="stockRows"></tbody></table></div>
+      </section>
+
+      <section class="two-col">
+        <div id="portfolio" class="panel"><div class="section-head"><div><h2>Your portfolio</h2><p>Shares currently held</p></div></div><div class="table-wrap"><table><thead><tr><th>Stock</th><th>Qty</th><th>Avg. buy</th><th>Current value</th><th>P&amp;L</th></tr></thead><tbody id="holdingRows"></tbody></table></div><p id="emptyHoldings" class="empty hidden">No holdings yet. Buy a sample stock to get started.</p></div>
+        <div class="panel"><div class="section-head"><div><h2>Recent activity</h2><p>Your latest simulated orders</p></div></div><div id="transactions" class="transactions"></div></div>
+      </section>
+      <p class="disclaimer">Academic demo only. Stock names and prices are illustrative sample data, not live market quotes or investment recommendations.</p>
+    </section>
+  </main>
+
+  <div id="tradeModal" class="modal hidden"><div class="modal-card"><button id="closeModal" class="modal-close">×</button><div class="eyebrow">SIMULATED ORDER</div><h2 id="tradeTitle">Buy stock</h2><p id="tradeInfo" class="muted"></p><form id="tradeForm"><input type="hidden" name="symbol" /><input type="hidden" name="type" /><label>Quantity</label><input name="quantity" type="number" min="1" step="1" value="1" required /><button class="btn btn-primary full">Confirm simulated order</button></form><p id="tradeMessage" class="message"></p></div></div>
+  <div id="toast" class="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>

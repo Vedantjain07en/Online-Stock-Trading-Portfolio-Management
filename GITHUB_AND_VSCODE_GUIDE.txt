@@ -1,0 +1,38 @@
+GITHUB + VS CODE SUBMISSION GUIDE
+
+A. RUN LOCALLY
+1. Install Node.js 18+ and MongoDB Community Server, or create a MongoDB Atlas database.
+2. Extract this project ZIP.
+3. Open the extracted folder in VS Code.
+4. Select Terminal > New Terminal.
+5. Run: npm install
+6. Copy .env.example to .env.
+   macOS/Linux: cp .env.example .env
+   Windows PowerShell: Copy-Item .env.example .env
+7. Edit .env and set MONGODB_URI and JWT_SECRET.
+8. Run: npm run seed
+9. Run: npm start
+10. Open http://localhost:5000 in Chrome/Edge.
+11. Create an account and try a simulated buy/sell order.
+
+B. UPLOAD TO GITHUB
+1. Sign in at https://github.com and create a repository:
+   Online-Stock-Trading-Portfolio-Management
+2. Open this project folder in VS Code Terminal.
+3. Run:
+   git init
+   git add .
+   git commit -m "Initial SE project submission"
+   git branch -M main
+   git remote add origin https://github.com/YOUR-USERNAME/Online-Stock-Trading-Portfolio-Management.git
+   git push -u origin main
+4. Replace YOUR-USERNAME with your GitHub username.
+5. Copy the repository URL into Github_Link.txt.
+6. Re-create the final ZIP including Github_Link.txt after adding the real link.
+
+C. POD SUBMISSION
+Upload the final ZIP file to the SE project activity. If POD provides a separate URL field, paste the GitHub repository URL there too.
+
+IMPORTANT
+- Never commit .env, passwords, database credentials or node_modules.
+- Sample stock prices are illustrative only; this is not live trading.

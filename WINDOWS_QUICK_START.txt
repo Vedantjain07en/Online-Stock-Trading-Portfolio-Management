@@ -1,0 +1,12 @@
+WINDOWS QUICK START (VS CODE)
+1. Install Node.js LTS and MongoDB, or use MongoDB Atlas.
+2. Extract ZIP, then VS Code > File > Open Folder.
+3. Terminal > New Terminal.
+4. npm install
+5. Copy-Item .env.example .env
+6. Open .env and set your MongoDB connection string.
+7. npm run seed
+8. npm start
+9. Visit http://localhost:5000
+
+If PowerShell blocks npm scripts, use Command Prompt as the VS Code terminal, or run npm.cmd instead of npm.
